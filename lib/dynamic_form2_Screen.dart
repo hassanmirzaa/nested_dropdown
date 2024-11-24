@@ -171,6 +171,7 @@ class _DynamicForm2ScreenState extends State<DynamicForm2Screen> {
                 builder: (controller) {
                   return MultiSelectDialogField(
                     dialogHeight: 200,
+                    backgroundColor: Colors.yellow,
                     items: controller.dropdowndata,
                     initialValue: controller.selectedBrandIds
                         .map((id) => controller.brandData.firstWhere(
@@ -227,6 +228,7 @@ class _DynamicForm2ScreenState extends State<DynamicForm2Screen> {
                 builder: (controller) {
                   return MultiSelectDialogField(
                     dialogHeight: 200,
+                    backgroundColor: Colors.yellow,
                     items: controller.filteredSkuData.map((sku) {
                       return MultiSelectItem(sku, sku.skuName);
                     }).toList(),
@@ -234,7 +236,7 @@ class _DynamicForm2ScreenState extends State<DynamicForm2Screen> {
                       'Select SKUs',
                       style: TextStyle(color: Colors.black),
                     ),
-                    selectedColor: Colors.black,
+                    selectedColor: Colors.blue,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(15)),
@@ -321,23 +323,27 @@ class _DynamicForm2ScreenState extends State<DynamicForm2Screen> {
                  
                   child: Container(
                     width: MediaQuery.of(context).size.width*0.3,
-                    height: MediaQuery.of(context).size.width*0.1,
+                    height: MediaQuery.of(context).size.width*0.2,
                     decoration: BoxDecoration(
                       color: Colors.blue,
-                      borderRadius: BorderRadius.circular(15)
+                      borderRadius: BorderRadius.circular(30)
                     ),
                     child: Center(
                       child: _isLoading
                           ? const CircularProgressIndicator()
                           : const Text('Submit',
                           style: TextStyle(
-                            fontSize: 20
+                            fontSize: 23,
+                            color: Colors.white
                           ),
                           ),
                     ),
                   ),
                 ),
               ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height*0.08,
+              )
             ],
           ),
         ),

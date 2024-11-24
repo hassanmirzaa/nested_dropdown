@@ -114,6 +114,12 @@ class DynamicForm2Controller extends GetxController {
         skuName: sku.skuName,
         quantityController: TextEditingController(),
       ));
+
+       selectedSkusWithQuantity.remove(SkuWithQuantity(
+        skuId: sku.skuId,
+        skuName: sku.skuName,
+        quantityController: TextEditingController(),
+      ));
     });
     update();
   }
